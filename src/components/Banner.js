@@ -1,20 +1,20 @@
-import { useState, useEffect, useCallback } from "react"; // 1. Agregamos useCallback
+import { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+
+// 1. Movemos las constantes fuera del componente para que sean estáticas
+const toRotate = [ "Web Developer", "Web Designer", "UX/UI Designer" ];
+const period = 2000;
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(250 - Math.random() * 100);
-  // Se eliminó la variable 'index' porque no se usaba en el HTML
   
-  const toRotate = [ "Web Developer", "Web Designer", "UX/UI Designer" ];
-  const period = 2000;
-
-  // 2. Envolvemos tick en useCallback para que useEffect no de errores de dependencia
+  // 2. Quitamos 'toRotate' de las dependencias porque ahora es externa y estática
   const tick = useCallback(() => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -34,7 +34,7 @@ export const Banner = () => {
       setLoopNum(loopNum + 1);
       setDelta(500);
     }
-  }, [isDeleting, loopNum, text.length, toRotate]); // Dependencias de tick
+  }, [isDeleting, loopNum, text.length]); 
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -42,12 +42,12 @@ export const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [tick, delta]); // 3. Ahora tick y delta son dependencias válidas
+  }, [tick, delta]);
 
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="align-items-center"> {/* Corregido: aligh -> align */}
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
@@ -67,7 +67,6 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  {/* Corregido: El alt no debe decir "Img" */}
                   <img src={headerImg} alt="Header banner showcasing development theme"/>
                 </div>}
             </TrackVisibility>
