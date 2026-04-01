@@ -12,7 +12,6 @@ import colorSharp from "../assets/img/color-sharp.png"
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -40,31 +39,31 @@ export const Skills = () => {
                         <p>I have extensive knowledge of JavaScript, CSS, HTML, as well as significant experience with<br></br>design applications such as Adobe Photoshop, Adobe Illustrator, and Figma.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={meter1} alt="CSS3 skill meter" />
                                 <h5>CSS3</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
+                                <img src={meter2} alt="HTML5 skill meter" />
                                 <h5>HTML5</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
+                                <img src={meter3} alt="JavaScript skill meter" />
                                 <h5>JavaScript</h5>
                             </div>
                             <div className="item">
-                                <img src={meter4} alt="Image" />
+                                <img src={meter4} alt="React skill meter" />
                                 <h5>React</h5>
                             </div>
                             <div className="item">
-                                <img src={meter5} alt="Image" />
+                                <img src={meter5} alt="Photoshop skill meter" />
                                 <h5>Adobe Photoshop</h5>
                             </div>
                             <div className="item">
-                                <img src={meter6} alt="Image" />
+                                <img src={meter6} alt="Figma skill meter" />
                                 <h5>Figma</h5>
                             </div>
                             <div className="item">
-                                <img src={meter7} alt="Image" />
+                                <img src={meter7} alt="Illustrator skill meter" />
                                 <h5>Adobe Illustrator</h5>
                             </div>
                         </Carousel>
@@ -72,7 +71,8 @@ export const Skills = () => {
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+        {/* Usamos un alt vacío para imágenes decorativas de fondo */}
+        <img className="background-image-left" src={colorSharp} alt="" />
     </section>
   )
 }
