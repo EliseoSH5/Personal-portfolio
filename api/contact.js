@@ -14,8 +14,8 @@ module.exports = async (req, res) => {
     host: "smtp.ethereal.email", 
     port: 587,
     auth: {
-      user: 'tu_usuario_aqui', // Reemplaza con tus credenciales
-      pass: 'tu_password_aqui',
+      user: 'estrella63@ethereal.email',
+        pass: 'QYpy4BDs3hky8Vz31y'
     },
   });
 
@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
     // 3. Enviar el correo
     await transporter.sendMail({
       from: `"${firstName}" <${email}>`,
-      to: "tu-correo-destino@gmail.com",
+      to: "estrella63@ethereal.email",
       subject: "New Contact Form Submission",
       text: `Name: ${firstName}\nEmail: ${email}\nMessage: ${message}`,
     });
