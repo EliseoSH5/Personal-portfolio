@@ -52,53 +52,57 @@ export const Contact = () => {
     }
   };
 
-  return (
-    <section className="contact" id="contact">
-      <Container>
-        <Row className="align-items-center">
-          <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <img 
-                  className={isVisible ? "animate__animated animate__zoomIn" : ""} 
-                  src={contactImg} 
-                  alt="Contact Us" 
-                />
-              )}
-            </TrackVisibility>
-          </Col>
-          <Col size={12} md={6}>
-            <div className="animate__animated animate__fadeIn">
-              <h2>Get In Touch</h2>
-              <form ref={form} onSubmit={sendEmail}>
-                <Row>
-                  <Col size={12} className="px-1">
-                    <label>Name</label>
-                    <input type="text" name="from_name" placeholder="Full Name" required />
-                  </Col>
-                  <Col size={12} className="px-1">
-                    <label>Email</label>
-                    <input type="email" name="from_email" placeholder="Email Address" required />
-                  </Col>
-                  <Col size={12} className="px-1">
-                    <label>Message</label>
-                    <textarea rows="6" name="message" placeholder="Message" required></textarea>
-                    <button type="submit"><span>{buttonText}</span></button>
-                  </Col>
-                  {
-                    status.message &&
-                    <Col>
-                      <p className={status.success === false ? "danger" : "success"} style={{ marginTop: "10px" }}>
-                        {status.message}
-                      </p>
-                    </Col>
-                  }
-                </Row>
-              </form>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-  );
+// ... (lógica sendEmail e imports se mantienen igual)
+
+return (
+  <section className="contact" id="contact">
+    <Container>
+      <Row className="align-items-center">
+        <Col size={12} md={6}>
+          <TrackVisibility>
+            {({ isVisible }) =>
+              <img className={isVisible ? "animate__animated animate__zoomIn" : ""} src={contactImg} alt="Contact Us"/>
+            }
+          </TrackVisibility>
+        </Col>
+        
+        <Col size={12} md={6}>
+          <div className="animate__animated animate__fadeIn">
+            <h2>Get In Touch</h2>
+            <form ref={form} onSubmit={sendEmail}>
+              {/* Contenedor vertical: Usamos d-grid o simplemente columnas de 12 */}
+              <div className="d-flex flex-column">
+                
+                <div className="mb-3">
+                  <label>Name</label>
+                  <input type="text" name="from_name" placeholder="Full Name" required />
+                </div>
+                
+                <div className="mb-3">
+                  <label>Email</label>
+                  <input type="email" name="from_email" placeholder="Email Address" required />
+                </div>
+                
+                <div className="mb-4">
+                  <label>Message</label>
+                  <textarea rows="6" name="message" placeholder="Message" required></textarea>
+                </div>
+
+                <button type="submit"><span>{buttonText}</span></button>
+
+                {status.message &&
+                  <div className="mt-3">
+                    <p className={status.success === false ? "danger" : "success"}>
+                      {status.message}
+                    </p>
+                  </div>
+                }
+              </div>
+            </form>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </section>
+);
 };
