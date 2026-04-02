@@ -1,31 +1,38 @@
-// api/contact.js
 const nodemailer = require("nodemailer");
 
+// En Vercel, la función debe exportarse así para ser una Serverless Function
 module.exports = async (req, res) => {
-  if (req.method === "POST") {
-    const { firstName, email, message } = req.body;
+  // 1. IMPORTANTE: Solo permitir peticiones POST
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method Not Allowed. Use POST." });
+  }
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email", // Cambia esto por tu SMTP real (Gmail, etc.)
-      port: 587,
-      auth: {
-        user: 'amparo53@ethereal.email',
-        pass: 'SX3BscTNWf4yAuVRQq'
-      },
+  const { firstName, email, message } = req.body;
+
+  // 2. Configuración de Nodemailer (Ethereal para pruebas o Gmail para real)
+  const transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email", 
+    port: 587,
+    auth: {
+      user: 'tu_usuario_aqui', // Reemplaza con tus credenciales
+      pass: 'tu_password_aqui',
+    },
+  });
+
+  try {
+    // 3. Enviar el correo
+    await transporter.sendMail({
+      from: `"${firstName}" <${email}>`,
+      to: "tu-correo-destino@gmail.com",
+      subject: "New Contact Form Submission",
+      text: `Name: ${firstName}\nEmail: ${email}\nMessage: ${message}`,
     });
 
-    try {
-      await transporter.sendMail({
-        from: `"${firstName}" <${email}>`,
-        to: "eliseosh5@gmail.com",
-        subject: "New Portfolio Message",
-        text: message,
-      });
-      res.status(200).json({ code: 200, status: "Message Sent" });
-    } catch (error) {
-      res.status(500).json({ code: 500, status: "Error", message: error.message });
-    }
-  } else {
-    res.status(405).json({ message: "Method not allowed" });
+    // 4. RESPUESTA ÉXITO: Esto evita el error de "Unexpected end of JSON"
+    return res.status(200).json({ code: 200, status: "Message Sent" });
+
+  } catch (error) {
+    console.error("Error en Nodemailer:", error);
+    return res.status(500).json({ code: 500, status: "Error", message: error.message });
   }
 };
