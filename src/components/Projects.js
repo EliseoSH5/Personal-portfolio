@@ -5,6 +5,7 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 import projImg7 from "../assets/img/project-img7.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
@@ -23,7 +24,7 @@ export const Projects = () => {
       title: "AGENTXIA",
       description: "Design & Development",
       imgUrl: projImg1,
-      extLink:""
+      extLink:"https://www.figma.com/proto/ifaodA32OOvxsGGlqWUxMT/AGENTXIA?node-id=1-505&t=RK14jEDyxJ3sPRP9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A505"
     },
     {
       title: "NFT Store",
@@ -47,10 +48,10 @@ export const Projects = () => {
 
   const projectsC = [
     {
-      title: "AGENTXIA",
+      title: "APP Reportes",
       description: "Design & Development",
-      imgUrl: projImg1,
-      extLink:""
+      imgUrl: projImg6,
+      extLink:"https://app-reportes.vercel.app/"
     },
     {
       title: "Walthome",
