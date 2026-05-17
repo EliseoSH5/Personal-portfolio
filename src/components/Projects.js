@@ -14,16 +14,16 @@ export const Projects = () => {
 
   const projectsD = [
     {
+      title: "Be^nu",
+      description: "Design & Brand",
+      imgUrl: projImg5,
+      extLink:"https://www.figma.com/proto/1Ijmd38jMELFc6YRU0DeXn/Caso-de-estudio--BENU?node-id=3-10&t=RK14jEDyxJ3sPRP9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+    },
+    {
       title: "AGENTXIA",
       description: "Design & Development",
       imgUrl: projImg1,
       extLink:""
-    },
-    {
-      title: "DinoTransfers",
-      description: "Design & Branding",
-      imgUrl: projImg2,
-      extLink:"https://www.figma.com/proto/20gv0eBOf3NJAuPVSJQAHz/DinoTransfers?type=design&node-id=227-376&t=1u4EDeKMFRTSlVOk-0&scaling=scale-down-width&page-id=36%3A2&starting-point-node-id=227%3A376&show-proto-sidebar=1"
     },
     {
       title: "NFT Store",
@@ -32,16 +32,16 @@ export const Projects = () => {
       extLink:"https://www.figma.com/proto/do6JrMyFwRawIWYAkcKNNd/NFT-STORE?node-id=2-702&t=RK14jEDyxJ3sPRP9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
     },
     {
+      title: "DinoTransfers",
+      description: "Design & Branding",
+      imgUrl: projImg2,
+      extLink:"https://www.figma.com/proto/20gv0eBOf3NJAuPVSJQAHz/DinoTransfers?type=design&node-id=227-376&t=1u4EDeKMFRTSlVOk-0&scaling=scale-down-width&page-id=36%3A2&starting-point-node-id=227%3A376&show-proto-sidebar=1"
+    },
+    {
       title: "KÁAPEJ COFFEE",
       description: "Design",
       imgUrl: projImg4,
       extLink:"https://www.figma.com/proto/w4PsCUyrrnzy3EsiwdMzQq/Coffee-App?type=design&node-id=31-1021&t=Ju5MPuYKyKiFuwYn-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=31%3A1021&mode=design"
-    },
-    {
-      title: "Be^nu",
-      description: "Design & Brand",
-      imgUrl: projImg5,
-      extLink:"https://www.figma.com/proto/1Ijmd38jMELFc6YRU0DeXn/Caso-de-estudio--BENU?node-id=3-10&t=RK14jEDyxJ3sPRP9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
     },
   ];
 
