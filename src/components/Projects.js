@@ -41,7 +41,7 @@ export const Projects = () => {
       title: "Be^nu",
       description: "Design & Brand",
       imgUrl: projImg5,
-      extLink:"https://www.figma.com/proto/gNOGVwwSGig37SEg0VwJl0/Be'nu?type=design&node-id=1-1613&t=LFx8LvSCzZ83Balj-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A1613&show-proto-sidebar=1"
+      extLink:"https://www.figma.com/proto/1Ijmd38jMELFc6YRU0DeXn/Caso-de-estudio--BENU?node-id=3-10&t=RK14jEDyxJ3sPRP9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
     },
   ];
 
