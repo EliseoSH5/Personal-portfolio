@@ -29,7 +29,7 @@ export const Projects = () => {
       title: "NFT Store",
       description: "Design",
       imgUrl: projImg3,
-      extLink:"https://www.figma.com/proto/X0rGMkU8bWKiyXLGXiTF0W/NFT?type=design&node-id=22-1706&t=teMggeqj6eIi62tE-0&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=22%3A1706"
+      extLink:"https://www.figma.com/proto/do6JrMyFwRawIWYAkcKNNd/NFT-STORE?node-id=2-702&t=RK14jEDyxJ3sPRP9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
     },
     {
       title: "KÁAPEJ COFFEE",
